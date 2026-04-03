@@ -20,12 +20,19 @@ class ProjectCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(project.image),
-          const SizedBox(height: 15),
+          ClipRRect(
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(15)),
+            child: AspectRatio(
+              aspectRatio: 16 / 9,
+              child: Image.asset(project.image, fit: BoxFit.cover),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
               project.title,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
               style:
                   Responsive.isDesktop(context)
                       ? text.titleLarge?.copyWith(
@@ -43,12 +50,22 @@ class ProjectCard extends StatelessWidget {
               project.description,
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
-              style: text.titleLarge?.copyWith(
+              style: text.titleMedium?.copyWith(
                 color: AppColors.backgroundDark,
               ),
             ),
           ),
-          ElevatedButton(onPressed: () {}, child: const Text('View More')),
+          const Spacer(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Text('View More'),
+              ),
+            ),
+          ),
         ],
       ),
     );

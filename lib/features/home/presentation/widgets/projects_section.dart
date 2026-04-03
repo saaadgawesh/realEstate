@@ -19,41 +19,38 @@ class ProjectsSection extends StatelessWidget {
         children: [
           Text('Our projects', style: text.titleLarge),
           const SizedBox(height: 15),
-          SizedBox(
-            height: MediaQuery.of(context).size.height,
-            child: Responsive(
-              desktop: ProjectsGridView(
-                childaspectratio: 0.75,
-                itemcount: projects.length,
-                crossaxiscount: 3,
-                itembuilder: (context, index) {
-                  return ProjectCard(text: text, project: projects[index]);
-                },
-              ),
-              tablet: ProjectsGridView(
-                childaspectratio: 0.75,
-                itemcount: projects.length,
-                crossaxiscount: MediaQuery.of(context).size.width < 900 ? 2 : 3,
-                itembuilder: (context, index) {
-                  return ProjectCard(text: text, project: projects[index]);
-                },
-              ),
-              mobileLarge: ProjectsGridView(
-                childaspectratio: 0.75,
-                itemcount: projects.length,
-                crossaxiscount: 2,
-                itembuilder: (context, index) {
-                  return ProjectCard(text: text, project: projects[index]);
-                },
-              ),
-              mobile: ProjectsGridView(
-                childaspectratio: 0.75,
-                itemcount: projects.length,
-                crossaxiscount: 1,
-                itembuilder: (context, index) {
-                  return ProjectCard(text: text, project: projects[index]);
-                },
-              ),
+          Responsive(
+            desktop: ProjectsGridView(
+              childaspectratio: 0.75,
+              itemcount: projects.length,
+              crossaxiscount: 3,
+              itembuilder: (context, index) {
+                return ProjectCard(text: text, project: projects[index]);
+              },
+            ),
+            tablet: ProjectsGridView(
+              childaspectratio: 0.75,
+              itemcount: projects.length,
+              crossaxiscount: MediaQuery.of(context).size.width < 900 ? 2 : 3,
+              itembuilder: (context, index) {
+                return ProjectCard(text: text, project: projects[index]);
+              },
+            ),
+            mobileLarge: ProjectsGridView(
+              childaspectratio: 0.75,
+              itemcount: projects.length,
+              crossaxiscount: 2,
+              itembuilder: (context, index) {
+                return ProjectCard(text: text, project: projects[index]);
+              },
+            ),
+            mobile: ProjectsGridView(
+              childaspectratio: 0.75,
+              itemcount: projects.length,
+              crossaxiscount: 1,
+              itembuilder: (context, index) {
+                return ProjectCard(text: text, project: projects[index]);
+              },
             ),
           ),
         ],
