@@ -1,16 +1,81 @@
-# real_state_app
+# Real Estate App
 
-A new Flutter project.
+A Flutter real estate landing page/dashboard with a responsive layout, project showcase, testimonials, and a side information panel.
+
+## Overview
+
+This project is a UI-focused Flutter application for presenting real estate content in a modern dashboard-style layout.
+
+Main sections include:
+
+- Hero banner
+- Stats overview
+- Projects grid
+- Recommendations/testimonials
+- Side menu with contact info, goals, and social links
+
+## Tech Stack
+
+- Flutter
+- Dart
+- `flutter_svg`
+
+## Project Structure
+
+The app code inside `lib` is organized by responsibility:
+
+```text
+lib/
+  core/
+    constants/
+    layout/
+    theme/
+  features/
+    home/
+      data/
+        models/
+      presentation/
+        screens/
+        widgets/
+```
+
+Important paths:
+
+- `lib/main.dart`
+- `lib/core/theme/app_theme.dart`
+- `lib/core/layout/responsive.dart`
+- `lib/features/home/presentation/screens/home_screen.dart`
+- `lib/features/home/presentation/widgets/`
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Requirements
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter SDK
+- Dart SDK
+- A device, emulator, or browser target enabled for Flutter
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Install dependencies
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter pub get
+```
+
+### Run the app
+
+```bash
+flutter run
+```
+
+## Assets
+
+The project uses local assets from:
+
+- `assets/images/`
+- `assets/icons/`
+
+## Notes
+
+- The app currently focuses on UI and layout structure.
+- Sample content is stored locally in Dart model files under `lib/features/home/data/models/`.
+- The codebase was reorganized to use clearer naming and a more maintainable feature-based structure.

@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:real_state_app/Core/resources/AppTheme.dart';
-import 'package:real_state_app/Core/screens/HomeScreen.dart';
+import 'package:real_state_app/core/theme/app_theme.dart';
+import 'package:real_state_app/features/home/home_dependencies.dart';
+import 'package:real_state_app/features/home/presentation/view_models/home_view_model.dart';
+import 'package:real_state_app/features/home/presentation/screens/home_screen.dart';
 
 void main() {
-  runApp(RealEstateApp());
+  runApp(RealEstateApp(homeViewModel: buildHomeViewModel()));
 }
 
 class RealEstateApp extends StatelessWidget {
-  const RealEstateApp({super.key});
+  final HomeViewModel homeViewModel;
+
+  const RealEstateApp({super.key, required this.homeViewModel});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Homescreen(),
-      theme: AppTheme.LightTheme,
+      home: HomeScreen(viewModel: homeViewModel),
+      theme: AppTheme.lightTheme,
     );
   }
 }
